@@ -10,7 +10,7 @@ import UIKit
 class CombineCardView: UIView {
     
     var usuario: Usuario? {
-        didSet{
+        didSet {
             if let usuario = usuario {
                 fotoImageView.image = UIImage(named: usuario.foto)
                 nomeLabel.text = usuario.nome
@@ -46,10 +46,22 @@ class CombineCardView: UIView {
         addSubview(fotoImageView)
         
         addSubview(deslikeImageView)
-        deslikeImageView.preencher(top: topAnchor, leading: nil, trailing: trailingAnchor, bottom: nil, padding: .init(top: 20, left: 0, bottom: 0, right: 20))
+        deslikeImageView.preencher(
+            top: topAnchor,
+            leading: nil,
+            trailing: trailingAnchor,
+            bottom: nil,
+            padding: .init(top: 20, left: 0, bottom: 0, right: 20)
+        )
         
         addSubview(likeImageView)
-        likeImageView.preencher(top: topAnchor, leading: leadingAnchor, trailing: nil, bottom: nil, padding: .init(top: 20, left: 20, bottom: 0, right: 0))
+        likeImageView.preencher(
+            top: topAnchor,
+            leading: leadingAnchor,
+            trailing: nil,
+            bottom: nil,
+            padding: .init(top: 20, left: 20, bottom: 0, right: 0)
+        )
         
         fotoImageView.preencherSuperview()
         
@@ -61,19 +73,25 @@ class CombineCardView: UIView {
         stackView.axis = .vertical
         
         addSubview(stackView)
+        stackView.preencher(
+            top: nil,
+            leading: leadingAnchor,
+            trailing: trailingAnchor,
+            bottom: bottomAnchor,
+            padding: .init(top: 0, left: 16, bottom: 16, right: 16)
+        )
         
-        stackView.preencher(top: nil, leading: leadingAnchor, trailing: trailingAnchor, bottom: bottomAnchor, padding: .init(top: 0, left: 16, bottom: 16, right: 16))
-        
-        let tap = UITapGestureRecognizer(target: self, action: #selector(visualizarclique))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(visualizarClique))
         stackView.isUserInteractionEnabled = true
         stackView.addGestureRecognizer(tap)
+        
     }
     
     required init?(coder: NSCoder) {
         fatalError()
     }
     
-    @objc func visualizarclique () {
+    @objc func visualizarClique () {
         if let usuario = self.usuario {
             self.callback?(usuario)
         }

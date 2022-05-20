@@ -24,7 +24,7 @@ class SlideFotosVc: UICollectionViewController, UICollectionViewDelegateFlowLayo
     }
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad() 
         
         collectionView.backgroundColor = .white
         

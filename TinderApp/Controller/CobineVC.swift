@@ -18,7 +18,6 @@ class CombineVC: UIViewController {
     var perfilButton: UIButton = .IconMenu(named: "icone-perfil")
     var chatButton: UIButton = .IconMenu(named: "icone-chat")
     var logoButton: UIButton = .IconMenu(named: "icone-logo")
-    
     var deslikeButton: UIButton  = .iconFooter(named: "icone-deslike")
     var superlikeButton: UIButton  = .iconFooter(named: "icone-superlike")
     var likeButton: UIButton  = .iconFooter(named: "icone-like")
@@ -32,7 +31,7 @@ class CombineVC: UIViewController {
         view.insertSubview(loading, at: 0)
         
         navigationController?.navigationBar.isHidden = true
-        view.backgroundColor = UIColor.systemGroupedBackground
+        view.backgroundColor = UIColor.white
         
         self.adicionaHeader()
         self.adicionarFooter()
@@ -54,7 +53,6 @@ class CombineVC: UIViewController {
 extension CombineVC {
     
     func adicionaHeader () {
-        
         let window = UIApplication.shared.windows.first { $0.isKeyWindow }
         let top: CGFloat = window?.safeAreaInsets.top ?? 44
         
@@ -81,13 +79,9 @@ extension CombineVC {
 extension CombineVC {
     
     func adicionarCards() {
-        
         for usuario in usuarios{
-            
             let card = CombineCardView()
-            
             card.frame = CGRect(x: 0, y: 0, width: view.bounds.width - 32, height: view.bounds.height * 0.7)
-            
             card.center = view.center
             card.usuario = usuario
             card.tag = usuario.id
@@ -100,15 +94,12 @@ extension CombineVC {
             gesture.addTarget(self, action: #selector(handlesCard))
             
             card.addGestureRecognizer(gesture)
-            
             view.insertSubview(card, at: 1)
-            
         }
     }
     
     func removerCard (card: UIView) {
         card.removeFromSuperview()
-        
         self.usuarios = self.usuarios.filter({ (usuarios) -> Bool in
             return usuarios.id != card.tag
         })
@@ -127,10 +118,17 @@ extension CombineVC {
         let detalheVC = DetalheVC()
         detalheVC.usuario = usuario
         detalheVC.modalPresentationStyle = .fullScreen
-        
+        detalheVC.callback = { (usuario, acao) in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                if acao == .deslike {
+                    self.deslikeClick()
+                } else {
+                    self.likeClick()
+                }
+            }
+        }
         self.present(detalheVC, animated: true, completion: nil)
     }
-    
 }
 
 extension CombineVC {
@@ -138,11 +136,8 @@ extension CombineVC {
         if let card =  gesture.view as? CombineCardView {
             let point = gesture.translation(in: view)
             print(point)
-            
             card.center = CGPoint(x: view.center.x + point.x, y: view.center.y + point.y)
-            
             let rotationAngle = point.x / view.bounds.width * 0.4
-            
             if point.x > 0 {
                 card.likeImageView.alpha = rotationAngle * 5
                 card.deslikeImageView.alpha = 0
@@ -150,7 +145,6 @@ extension CombineVC {
                 card.likeImageView.alpha = 0
                 card.deslikeImageView.alpha = rotationAngle * 5 * -1
             }
-            
             card.transform = CGAffineTransform(rotationAngle: rotationAngle)
             
             if gesture.state == .ended {
@@ -183,7 +177,6 @@ extension CombineVC {
     @objc func superlikeClick () {
         self.animarCard(rotationAngle: 0.4, acao: .superlike)
     }
-    
     
     @objc func likeClick () {
         self.animarCard(rotationAngle: 0, acao: .like)
@@ -220,11 +213,8 @@ extension CombineVC {
                             if like {
                                 self.verificarMatch(usuarios: usuario)
                             }
-                            
                             self.removerCard(card: card)
                         }
-                        
-                        
                     }
                 }
             }

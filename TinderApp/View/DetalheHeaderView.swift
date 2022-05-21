@@ -8,7 +8,6 @@
 import UIKit
 
 class DetalheHeaderView: UICollectionReusableView {
-    
     var usuario: Usuario? {
         didSet{
             fotoImageview.image = UIImage(named: usuario!.foto)

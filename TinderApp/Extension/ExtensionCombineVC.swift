@@ -1,83 +1,14 @@
 //
-//  CobineVC.swift
+//  Extension.swift
 //  TinderApp
 //
-//  Created by Brian Ail on 14/05/22.
+//  Created by Brian Ail on 21/05/22.
 //
 
+import Foundation
 import UIKit
 
-enum Acao {
-    case deslike
-    case superlike
-    case like
-}
-
-class CombineVC: UIViewController {
-    
-    var perfilButton: UIButton = .IconMenu(named: "icone-perfil")
-    var chatButton: UIButton = .IconMenu(named: "icone-chat")
-    var logoButton: UIButton = .IconMenu(named: "icone-logo")
-    var deslikeButton: UIButton  = .iconFooter(named: "icone-deslike")
-    var superlikeButton: UIButton  = .iconFooter(named: "icone-superlike")
-    var likeButton: UIButton  = .iconFooter(named: "icone-like")
-    
-    var usuarios: [Usuario] = []
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let loading = Loading(frame: view.frame)
-        view.insertSubview(loading, at: 0)
-        
-        navigationController?.navigationBar.isHidden = true
-        view.backgroundColor = UIColor.white
-        
-        self.adicionaHeader()
-        self.adicionarFooter()
-        self.buscaUsuario()
-    }
-    
-    func buscaUsuario () {
-        UsuarioService.shared.buscaUsuarios {( usuarios, err) in
-            if let usuarios = usuarios {
-                DispatchQueue.main.async {
-                    self.usuarios = usuarios
-                    self.adicionarCards()
-                }
-            }
-        }
-    }
-}
-
 extension CombineVC {
-    
-    func adicionaHeader () {
-        let window = UIApplication.shared.windows.first { $0.isKeyWindow }
-        let top: CGFloat = window?.safeAreaInsets.top ?? 44
-        
-        let stackView = UIStackView(arrangedSubviews: [perfilButton,logoButton,chatButton])
-        stackView.distribution = .equalCentering
-        
-        view.addSubview(stackView)
-        stackView.preencher(top: view.topAnchor, leading: view.leadingAnchor, trailing: view.trailingAnchor, bottom: nil, padding: .init(top: top, left: 16, bottom: 0, right: 16))
-    }
-    
-    func adicionarFooter () {
-        let stackView = UIStackView(arrangedSubviews: [UIView(), deslikeButton, superlikeButton, likeButton, UIView()])
-        stackView.distribution = .equalCentering
-        
-        view.addSubview(stackView)
-        stackView.preencher(top: nil, leading: view.leadingAnchor, trailing: view.trailingAnchor, bottom: view.bottomAnchor, padding: .init(top: 0, left: 16, bottom: 34, right: 16))
-        
-        deslikeButton.addTarget(self, action: #selector(deslikeClick), for: .touchUpInside)
-        superlikeButton.addTarget(self, action: #selector(superlikeClick), for: .touchUpInside)
-        likeButton.addTarget(self, action: #selector(likeClick), for: .touchUpInside)
-    }
-}
-
-extension CombineVC {
-    
     func adicionarCards() {
         for usuario in usuarios{
             let card = CombineCardView()
@@ -129,9 +60,38 @@ extension CombineVC {
         }
         self.present(detalheVC, animated: true, completion: nil)
     }
-}
-
-extension CombineVC {
+    
+    func adicionaHeader () {
+        let window = UIApplication.shared.windows.first { $0.isKeyWindow }
+        let top: CGFloat = window?.safeAreaInsets.top ?? 44
+        
+        let stackView = UIStackView(arrangedSubviews: [perfilButton,logoButton,chatButton])
+        stackView.distribution = .equalCentering
+        
+        view.addSubview(stackView)
+        stackView.preencher(top: view.topAnchor, leading: view.leadingAnchor, trailing: view.trailingAnchor, bottom: nil, padding: .init(top: top, left: 16, bottom: 0, right: 16))
+        
+        perfilButton.addTarget(self, action: #selector(perfilClique), for: .touchUpInside)
+    }
+    
+    func adicionarFooter () {
+        let stackView = UIStackView(arrangedSubviews: [UIView(), deslikeButton, superlikeButton, likeButton, UIView()])
+        stackView.distribution = .equalCentering
+        
+        view.addSubview(stackView)
+        stackView.preencher(top: nil, leading: view.leadingAnchor, trailing: view.trailingAnchor, bottom: view.bottomAnchor, padding: .init(top: 0, left: 16, bottom: 34, right: 16))
+        
+        deslikeButton.addTarget(self, action: #selector(deslikeClick), for: .touchUpInside)
+        superlikeButton.addTarget(self, action: #selector(superlikeClick), for: .touchUpInside)
+        likeButton.addTarget(self, action: #selector(likeClick), for: .touchUpInside)
+    }
+    
+    func visualizarUsuario () {
+        let usuarioVC = UsuarioVC()
+        usuarioVC.modalPresentationStyle = .fullScreen
+        self.present(usuarioVC, animated: true, completion: nil)
+    }
+    
     @objc func handlesCard (gesture: UIPanGestureRecognizer) {
         if let card =  gesture.view as? CombineCardView {
             let point = gesture.translation(in: view)
@@ -168,18 +128,6 @@ extension CombineVC {
                 }
             }
         }
-    }
-    
-    @objc func deslikeClick () {
-        self.animarCard(rotationAngle: -0.4, acao: .deslike)
-    }
-    
-    @objc func superlikeClick () {
-        self.animarCard(rotationAngle: 0.4, acao: .superlike)
-    }
-    
-    @objc func likeClick () {
-        self.animarCard(rotationAngle: 0, acao: .like)
     }
     
     func animarCard (rotationAngle: CGFloat, acao: Acao ) {
@@ -219,5 +167,22 @@ extension CombineVC {
                 }
             }
         }
+    }
+    
+    @objc func deslikeClick () {
+        self.animarCard(rotationAngle: -0.4, acao: .deslike)
+    }
+    
+    @objc func superlikeClick () {
+        self.animarCard(rotationAngle: 0.4, acao: .superlike)
+    }
+    
+    @objc func likeClick () {
+        self.animarCard(rotationAngle: 0, acao: .like)
+        
+    }
+    
+    @objc func perfilClique () {
+        visualizarUsuario()
     }
 }

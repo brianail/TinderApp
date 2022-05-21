@@ -10,13 +10,18 @@
 		8930D4DE2831A8BD0093583D /* DetalhePerfilCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8930D4DD2831A8BD0093583D /* DetalhePerfilCell.swift */; };
 		8930D4E02831C3290093583D /* DetalheFotosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8930D4DF2831C3290093583D /* DetalheFotosCell.swift */; };
 		8930D4E22831C77E0093583D /* SlideFotosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8930D4E12831C77E0093583D /* SlideFotosVC.swift */; };
+		895F828628382FE000D73111 /* UsuarioVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895F828528382FE000D73111 /* UsuarioVc.swift */; };
+		895F828828385F2F00D73111 /* Perfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895F828728385F2F00D73111 /* Perfil.swift */; };
+		895F828A2838901800D73111 /* PerfilService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895F82892838901800D73111 /* PerfilService.swift */; };
+		895F828C283893FB00D73111 /* DetalhePerfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895F828B283893FB00D73111 /* DetalhePerfilView.swift */; };
+		8982E9AD283978050075B32E /* ExtensionUsuarioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8982E9AC283978050075B32E /* ExtensionUsuarioVC.swift */; };
 		899019482830411800316294 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899019472830411800316294 /* AppDelegate.swift */; };
 		8990194A2830411800316294 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899019492830411800316294 /* SceneDelegate.swift */; };
 		8990194C2830411800316294 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8990194B2830411800316294 /* ViewController.swift */; };
 		8990194F2830411800316294 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8990194D2830411800316294 /* Main.storyboard */; };
 		899019512830411E00316294 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 899019502830411E00316294 /* Assets.xcassets */; };
 		899019542830411E00316294 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 899019522830411E00316294 /* LaunchScreen.storyboard */; };
-		8990195D2830414000316294 /* CobineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8990195C2830414000316294 /* CobineVC.swift */; };
+		8990195D2830414000316294 /* CombineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8990195C2830414000316294 /* CombineVC.swift */; };
 		89901960283046E100316294 /* CombineCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8990195F283046E100316294 /* CombineCardView.swift */; };
 		89901963283049B000316294 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89901962283049B000316294 /* UIView.swift */; };
 		8990196528304C6A00316294 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8990196428304C6A00316294 /* UILabel.swift */; };
@@ -28,6 +33,7 @@
 		899019732831778400316294 /* MatchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899019722831778400316294 /* MatchVC.swift */; };
 		89901975283191C400316294 /* DetalheVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89901974283191C400316294 /* DetalheVC.swift */; };
 		89A9670828342BD3001FA063 /* SlideFotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A9670728342BD3001FA063 /* SlideFotoCell.swift */; };
+		89D27B2D28396CCE0084700B /* ExtensionCombineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D27B2C28396CCE0084700B /* ExtensionCombineVC.swift */; };
 		89EC56702831A39600D145F9 /* DetalheHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EC566F2831A39600D145F9 /* DetalheHeaderView.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +41,11 @@
 		8930D4DD2831A8BD0093583D /* DetalhePerfilCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhePerfilCell.swift; sourceTree = "<group>"; };
 		8930D4DF2831C3290093583D /* DetalheFotosCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalheFotosCell.swift; sourceTree = "<group>"; };
 		8930D4E12831C77E0093583D /* SlideFotosVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideFotosVC.swift; sourceTree = "<group>"; };
+		895F828528382FE000D73111 /* UsuarioVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsuarioVc.swift; sourceTree = "<group>"; };
+		895F828728385F2F00D73111 /* Perfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Perfil.swift; sourceTree = "<group>"; };
+		895F82892838901800D73111 /* PerfilService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilService.swift; sourceTree = "<group>"; };
+		895F828B283893FB00D73111 /* DetalhePerfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhePerfilView.swift; sourceTree = "<group>"; };
+		8982E9AC283978050075B32E /* ExtensionUsuarioVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUsuarioVC.swift; sourceTree = "<group>"; };
 		899019442830411800316294 /* TinderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		899019472830411800316294 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		899019492830411800316294 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,7 +54,7 @@
 		899019502830411E00316294 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		899019532830411E00316294 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		899019552830411E00316294 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8990195C2830414000316294 /* CobineVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CobineVC.swift; sourceTree = "<group>"; };
+		8990195C2830414000316294 /* CombineVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineVC.swift; sourceTree = "<group>"; };
 		8990195F283046E100316294 /* CombineCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineCardView.swift; sourceTree = "<group>"; };
 		89901962283049B000316294 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		8990196428304C6A00316294 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
@@ -55,6 +66,7 @@
 		899019722831778400316294 /* MatchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchVC.swift; sourceTree = "<group>"; };
 		89901974283191C400316294 /* DetalheVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalheVC.swift; sourceTree = "<group>"; };
 		89A9670728342BD3001FA063 /* SlideFotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideFotoCell.swift; sourceTree = "<group>"; };
+		89D27B2C28396CCE0084700B /* ExtensionCombineVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCombineVC.swift; sourceTree = "<group>"; };
 		89EC566F2831A39600D145F9 /* DetalheHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalheHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,6 +100,7 @@
 		899019462830411800316294 /* TinderApp */ = {
 			isa = PBXGroup;
 			children = (
+				89D27B2B28396CB60084700B /* Extension */,
 				89901969283069D500316294 /* Service */,
 				89901966283068C000316294 /* Model */,
 				8990195E283046CC00316294 /* View */,
@@ -107,7 +120,8 @@
 		8990195B2830412E00316294 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				8990195C2830414000316294 /* CobineVC.swift */,
+				8990195C2830414000316294 /* CombineVC.swift */,
+				895F828528382FE000D73111 /* UsuarioVc.swift */,
 				899019722831778400316294 /* MatchVC.swift */,
 				89901974283191C400316294 /* DetalheVC.swift */,
 				8930D4E12831C77E0093583D /* SlideFotosVC.swift */,
@@ -119,11 +133,12 @@
 			isa = PBXGroup;
 			children = (
 				8990195F283046E100316294 /* CombineCardView.swift */,
-				899019702830AE9100316294 /* Loading.swift */,
 				89EC566F2831A39600D145F9 /* DetalheHeaderView.swift */,
+				895F828B283893FB00D73111 /* DetalhePerfilView.swift */,
 				8930D4DD2831A8BD0093583D /* DetalhePerfilCell.swift */,
 				8930D4DF2831C3290093583D /* DetalheFotosCell.swift */,
 				89A9670728342BD3001FA063 /* SlideFotoCell.swift */,
+				899019702830AE9100316294 /* Loading.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -143,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				89901967283068E300316294 /* Usuario.swift */,
+				895F828728385F2F00D73111 /* Perfil.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -151,8 +167,18 @@
 			isa = PBXGroup;
 			children = (
 				8990196A283069E700316294 /* UsuarioService.swift */,
+				895F82892838901800D73111 /* PerfilService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		89D27B2B28396CB60084700B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				89D27B2C28396CCE0084700B /* ExtensionCombineVC.swift */,
+				8982E9AC283978050075B32E /* ExtensionUsuarioVC.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,17 +255,23 @@
 				8930D4E22831C77E0093583D /* SlideFotosVC.swift in Sources */,
 				8990196D28306E4600316294 /* UIImageview.swift in Sources */,
 				8990196B283069E700316294 /* UsuarioService.swift in Sources */,
+				895F828628382FE000D73111 /* UsuarioVc.swift in Sources */,
 				89901968283068E300316294 /* Usuario.swift in Sources */,
+				895F828A2838901800D73111 /* PerfilService.swift in Sources */,
 				8990194C2830411800316294 /* ViewController.swift in Sources */,
+				895F828C283893FB00D73111 /* DetalhePerfilView.swift in Sources */,
 				899019482830411800316294 /* AppDelegate.swift in Sources */,
 				8990196528304C6A00316294 /* UILabel.swift in Sources */,
 				89901975283191C400316294 /* DetalheVC.swift in Sources */,
 				89901960283046E100316294 /* CombineCardView.swift in Sources */,
-				8990195D2830414000316294 /* CobineVC.swift in Sources */,
+				8990195D2830414000316294 /* CombineVC.swift in Sources */,
 				8990196F2830782400316294 /* UIButton.swift in Sources */,
 				8930D4E02831C3290093583D /* DetalheFotosCell.swift in Sources */,
+				8982E9AD283978050075B32E /* ExtensionUsuarioVC.swift in Sources */,
+				89D27B2D28396CCE0084700B /* ExtensionCombineVC.swift in Sources */,
 				89901963283049B000316294 /* UIView.swift in Sources */,
 				89A9670828342BD3001FA063 /* SlideFotoCell.swift in Sources */,
+				895F828828385F2F00D73111 /* Perfil.swift in Sources */,
 				8930D4DE2831A8BD0093583D /* DetalhePerfilCell.swift in Sources */,
 				89EC56702831A39600D145F9 /* DetalheHeaderView.swift in Sources */,
 				899019732831778400316294 /* MatchVC.swift in Sources */,

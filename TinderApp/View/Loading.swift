@@ -46,11 +46,11 @@ class Loading: UIView {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError()
     }
     
     func animacao () {
-        UIView.animate(withDuration: 1.0) {
+        UIView.animate(withDuration: 1.3) {
             self.loadView.frame = CGRect(x: 0, y: 0, width: 250, height: 250)
             self.loadView.center = self.center
             self.loadView.layer.cornerRadius = 125

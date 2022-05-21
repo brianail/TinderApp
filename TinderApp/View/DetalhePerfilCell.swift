@@ -21,7 +21,7 @@ class DetalhePerfilCell: UICollectionViewCell {
 
     let nomeLabel: UILabel = .textBoldLabel(size: 32)
     let idadeLabel: UILabel = .textLabel(size: 28)
-    let fraseLabel: UILabel = .textLabel(size: 18, numberOfLines: 2)
+    let fraseLabel: UILabel = .textLabel(size: 18, numberOfLines: 0)
   
   override init(frame: CGRect) {
     super.init(frame: frame)

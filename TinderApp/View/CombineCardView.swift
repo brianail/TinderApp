@@ -21,11 +21,9 @@ class CombineCardView: UIView {
     }
     
     let fotoImageView: UIImageView = .fotoImageView()
-    
     let nomeLabel: UILabel = .textBoldLabel(size: 32, textColor: .white)
     let idadeLabel: UILabel = .textLabel(size: 28, textColor: .white)
     let fraseLabel: UILabel = .textLabel(size: 18, textColor: .white, numberOfLines: 2)
-    
     let deslikeImageView: UIImageView = .iconCard(named: "card-deslike")
     let likeImageView: UIImageView = .iconCard(named: "card-like")
     
@@ -44,7 +42,6 @@ class CombineCardView: UIView {
         fraseLabel.adicionaShadow()
         
         addSubview(fotoImageView)
-        
         addSubview(deslikeImageView)
         deslikeImageView.preencher(
             top: topAnchor,
@@ -84,7 +81,6 @@ class CombineCardView: UIView {
         let tap = UITapGestureRecognizer(target: self, action: #selector(visualizarClique))
         stackView.isUserInteractionEnabled = true
         stackView.addGestureRecognizer(tap)
-        
     }
     
     required init?(coder: NSCoder) {
